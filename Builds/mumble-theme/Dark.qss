@@ -93,12 +93,12 @@ QWhatsThis {
   min-height: 1.3em;
   border: 1px solid #888;
   border-radius: 0;
-  background-color: #191919;
+  background-color: #121212;
   color: #d8d8d8; }
 
 QTextBrowser,
 QTextEdit {
-  background-color: #191919;
+  background-color: #121212;
   color: #d8d8d8;
   border: 1px solid #1c1c1c; }
 
@@ -233,7 +233,7 @@ QGroupBox::title {
   margin-right: 8px; }
 
 QListView {
-  background-color: #191919;
+  background-color: #121212;
   border: 1px solid #1c1c1c; }
 
 QListView::item {
@@ -256,9 +256,9 @@ QListView::item:selected:active {
   border: 1px solid #3e4f5e; }
 
 QTreeView {
-  background-color: #191919;
+  background-color: #121212;
   color: #d8d8d8;
-  selection-background-color: #191919;
+  selection-background-color: #121212;
   selection-color: #d8d8d8;
   border: 1px solid #1c1c1c; }
 
@@ -500,7 +500,7 @@ QAbstractScrollArea::corner {
   border-radius: 0;
   border-top: 1px solid #1c1c1c;
   border-left: 1px solid #1c1c1c;
-  background: #191919; }
+  background: #121212; }
 
 QLineEdit,
 QComboBox,
@@ -523,7 +523,7 @@ QSpinBox,
 QAbstractSpinBox,
 QComboBox:editable {
   border: 1px solid #2e2e2e;
-  background-color: #191919; }
+  background-color: #121212; }
 
 QSpinBox,
 QAbstractSpinBox {
@@ -546,7 +546,7 @@ QComboBox::drop-down,
 QAbstractSpinBox::drop-down,
 QSpinBox::drop-down,
 QDateTimeEdit::drop-down {
-  background-color: #191919;
+  background-color: #121212;
   border: 0;
   margin-left: 4px;
   margin-right: 12px;
@@ -602,7 +602,7 @@ QAbstractSpinBox::up-button:disabled {
   image: url(:/uitheme/controls/arrow_up_disabled.svg); }
 
 QComboBox QAbstractItemView {
-  background-color: #191919;
+  background-color: #121212;
   border: 1px solid #1c1c1c;
   color: #d8d8d8;
   border-radius: 0; }
@@ -745,7 +745,7 @@ QLineEdit:focus,
 QSpinBox:focus,
 QAbstractSpinBox:focus,
 QComboBox:editable:focus {
-  background-color: #191919; }
+  background-color: #121212; }
 
 QLineEdit:focus:hover,
 QSpinBox:focus:hover,
@@ -757,7 +757,7 @@ QLineEdit:hover,
 QSpinBox:hover,
 QAbstractSpinBox:hover,
 QComboBox:editable:hover {
-  background-color: #191919;
+  background-color: #121212;
   border-color: #555; }
 
 QCheckBox::indicator:focus,
