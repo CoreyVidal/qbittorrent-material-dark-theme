@@ -9,11 +9,16 @@
  *
  * Licensed under The Do What The Fuck You Want To Public License (WTFPL)
  */
-/*
- * YOU SHOULD NOT MODIFY THIS FILE
- * Edit the files in the "source" folder instead.
- * See project README
- *
+/*
+
+ * YOU SHOULD NOT MODIFY THIS FILE
+
+ * Edit the files in the "source" folder instead.
+
+ * See project README
+
+ *
+
  */
 TransferListWidget {
   qproperty-downloadingStateForeground: limegreen;
@@ -150,7 +155,7 @@ QMenuBar::item {
   padding: 4px 12px; }
 
 QMenuBar::item:selected {
-  background: #298ce1;
+  background: #298ce1; /* Very top menu bar */
   color: #FFF; }
 
 QMenuBar::item:pressed {
@@ -208,7 +213,7 @@ QPushButton:focus {
 
 QPushButton:pressed,
 QPushButton:pressed:focus {
-  background-color: #298ce1;
+  background-color: #298ce1; /* Bottom buttons: General, Trackers, Peers, HTTP Sources, Content */
   border-color: #298ce1;
   color: #FFF; }
 
