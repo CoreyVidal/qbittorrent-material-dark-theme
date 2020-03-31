@@ -19,6 +19,13 @@
 
  *
 
+Primary Color:
+165, 219, 255
+#A5DBFF
+
+Borders are 12%
+2F2F2F
+
  */
 TransferListWidget {
   qproperty-downloadingStateForeground: limegreen;
@@ -53,9 +60,9 @@ QObject::section {
   outline: 0;
   border: 0;
   selection-background-color: #298ce1;
-  selection-color: #FF0000;
+  selection-color: #FF00FF;
   alternate-background-color: transparent;
-  color: #121212;
+  color: #FF00FF;
   border-radius: 1px; }
 
 QMainWindow,
@@ -74,7 +81,7 @@ QAbstractScrollArea {
 
 QObject:disabled,
 QObject::item:disabled {
-  color: #484848; }
+  color: rgba(255, 255, 255, 0.38); } /* Disabled text in top-menu */
 
 a {
   color: #39a5dd;
@@ -107,7 +114,7 @@ QToolBar {
   spacing: 0;
   padding: 2px; }
 
-QToolButton {
+QToolButton {  /* The button icons along the top toolbar: "Add Torrent Link/File" "Delete" "Resume", */
   border: 1px solid transparent;
   border-radius: 2px;
   padding: 1px;
@@ -118,8 +125,8 @@ QToolButton:on {
   border: 1px solid #444; }
 
 QToolButton:hover {
-  background-color: #3e4f5e;
-  border: 1px solid #3e4f5e; }
+  background-color: rgba(165, 219, 255, 0.04);
+  border: 0px solid transparent; }
 
 QToolButton:pressed {
   background-color: #484848; }
@@ -150,8 +157,9 @@ QToolBar::handle:vertical {
   height: 8px;
   padding: 4px; }
 
-QMenuBar::item {
+QMenuBar::item { /* The very top Windows top menu bar */
   background-color: transparent;
+  color: rgba(255, 255, 255, 0.87);
   padding: 4px 12px; }
 
 QMenuBar::item:selected {
@@ -165,21 +173,21 @@ QMenuBar::item:pressed {
 QMenu {
   background: rgba(255, 255, 255, 0.12); /* Pop-out menu background - Elevation: 8dp */
   border: 1px solid #1c1c1c;
-  color: #d8d8d8; }
+  color: #0000ff; } /* ??? */
 
 QMenu::item {
-  border: 1px solid transparent;
-  color: #d8d8d8;
+  border-left: 4px solid transparent;
+  color: rgba(255, 255, 255, 0.87); /* Menu internal text color */
   padding: 5px 16px;
   padding-left: 25px;
   border-radius: 2px; }
 
 QMenu::item:selected {
-  background: #3e4f5e;
-  border: 1px solid #3e4f5e; }
+  background: rgba(255, 255, 255, 0.04); /* The color when hovering over the menu */
+  border-left: 4px solid transparent; }
 
 QMenu::item:disabled {
-  border: 1px solid transparent;
+  border-left: 4px solid transparent;
   background: transparent; }
 
 QMenu::separator {
@@ -192,48 +200,48 @@ QMenu::indicator {
   width: 25px; }
 
 QPushButton { /* QPushButton is for all the buttons along the bottom */
-  background-color: #121212;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.60);
+  background-color: #121212; /* This controls a LOT of button backgrounds */
+  border: 1px solid #2F2F2F; /* border when ignored */
+  color: rgba(255, 255, 255, 0.60); /* Colour of the text for non-highlighted buttons*/
   padding: 3px 20px; }
 
 QPushButton:focus {
-  background-color: #ff0000; }
+  background-color: rgba(165, 219, 255, 0.12); }
 
 QPushButton:hover {
-  background-color: rgba(157, 204, 242, 0.04);
-  border-color: rgba(255, 255, 255, 0.12); } /* Hover bottom button border */
+  background-color: rgba(165, 219, 255, 0.04); /* Button hover color */
+  border-color: #2F2F2F; } /* Hover bottom button border */
 
 QPushButton:hover:focus {
-  background-color: #ff00ff;
-  border-color: #00ff00; }
+  background-color: rgba(255, 255, 255, 0.12); /* If you hover WHILE it's focused */
+  border-color: rgba(165, 219, 255, 1); }
 
 QPushButton:focus {
-  border-color: #00ff00; }
+  border-color: rgba(165, 219, 255, 1); }
 
 QPushButton:pressed,
 QPushButton:pressed:focus {
-  background-color: rgba(157, 204, 242, 0.12);
-  border-color: rgba(157, 204, 242, 1); /* Selected bottom button border */
+  background-color: rgba(255, 255, 255, 0.1); /* Colour while pressed down */
+  border-color: rgba(165, 219, 255, 1); /* Selected bottom button border */
   color: rgba(255, 255, 255, 0.87); }
 
 QGroupBox,
 #qwMacWarning,
 #qwInlineNotice {
   background-color: rgba(255, 255, 255, 0.05); /* Bottom half "General" tab background - Elevation: 1dp */
-  border: 1px solid #1c1c1c;
-  color: #d8d8d8;
+  border: 0px solid transparent; /* Border */
+  color: rgba(255, 255, 255, 0.87); /* ??? */
   padding: 4px;
   padding-top: 1em; }
 
 QGroupBox::title {
-  background-color: transparent;
+  background-color: transparent; /* Small title background on the "General" tab */
   margin: 6px;
   margin-left: 8px;
   margin-right: 8px; }
 
 QListView {
-  background-color: #121212;
+  background-color: #121212; /* Background color for "HTTP Sources" tab */
   border: 1px solid #1c1c1c; }
 
 QListView::item {
@@ -256,66 +264,67 @@ QListView::item:selected:active {
   border: 1px solid #3e4f5e; }
 
 QTreeView {
-  background-color: #121212;
-  color: #d8d8d8;
-  selection-background-color: #121212;
-  selection-color: #d8d8d8;
-  border: 1px solid #1c1c1c; }
+  background-color: #000000; /* Top torrent background - this is the main view! */
+  color: rgba(255, 255, 255, 0.87); /* Color of text on "Content" tab */
+  selection-background-color: rgba(165, 219, 255, 0.24); /* Color of selection on "Content" tab */
+  selection-color: rgba(255, 255, 255, 0.87); /* Colour of the text when selected */
+  border: 0px;
+  border-radius: 4px; }
 
 QTreeView::item {
   min-width: 60px;
   border: 1px solid transparent;
   border-left: 0;
   border-right: 0;
-  color: #d8d8d8;
+  color: rgba(255, 255, 255, 0.87); /* Colour of ALL text */
   padding: 2px 4px;
-  selection-color: #d8d8d8;
+  selection-color: rgba(255, 255, 255, 0.87); /* Colour of selected text */
   border-radius: 0; }
 
 QTreeView::item:first,
 QTreeView::item:only-one {
-  border-left: 1px solid transparent;
+  border-left: 0px solid transparent; /* Left-most border when not selected */
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px; }
 
 QTreeView::item:last,
 QTreeView::item:only-one {
-  border-right: 1px solid transparent;
+  border-right: 0px solid transparent;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px; }
 
 QTreeView::item:hover,
 QTreeView::item:focus {
-  background-color: #333;
-  border-color: #333; }
+  background-color: rgba(255, 255, 255, 0.04); /* Hovering over torrents */
+  border: 0px solid transparent; } /* Border while hovering over torrents */
 
 QTreeView::item:selected {
-  background-color: #3b3b3b;
-  border: 1px solid #3b3b3b;
+  background-color: rgba(255, 255, 255, 0.12); /* */
+  border: 0px solid transparent;
   border-right: 0;
   border-left: 0; }
 
 QTreeView::item:selected:first,
 QTreeView::item:selected:only-one {
-  border-left: 1px solid #3b3b3b; }
+  border-left: 0px solid transparent; } /* Internal border on the VERY left */
 
 QTreeView::item:selected:last,
 QTreeView::item:selected:only-one {
-  border-right: 1px solid #3b3b3b; }
+  border-right: 0px solid transparent; }
 
 QTreeView::item:selected:active {
-  background-color: #3e4f5e;
-  border: 1px solid #3e4f5e;
+  background-color: rgba(255, 255, 255, 0.12); /* Selected torrent */
+  border: 0px solid transparent; /* Horizontal span across MOST of the torrent, but not all */
   border-right: 0;
   border-left: 0; }
 
 QTreeView::item:selected:active:first,
 QTreeView::item:selected:active:only-one {
-  border-left: 1px solid #3e4f5e; }
+  border: 0px solid transparent; } /* Left-most border */
 
 QTreeView::item:selected:active:last,
 QTreeView::item:selected:active:only-one {
-  border-right: 1px solid #3e4f5e; }
+  border: 0px solid transparent; }
 
 QTreeView::branch {
   border-image: none;
@@ -336,7 +345,7 @@ QHeaderView {
   background-color: #121212; } /* See below (3 lines down). The unused portion of that.*/
 
 QHeaderView::section {
-  background-color: #rgba(255, 255, 255, 0); /* Header just above main windows (both top and bottom half) - Elevation: 4dp */
+  background-color: #242424; /* Header just above main windows (both top and bottom half) - Elevation: 4dp */
   color: #d8d8d8;
   padding: 4px;
   padding-left: 8px;
@@ -358,7 +367,7 @@ QHeaderView::up-arrow {
 
 QTabWidget::pane {
   background-color: #121212; /* Outline all the way around everything */
-  border: 0px solid #1c1c1c; }
+  border: 0px solid transparent; }
 
 QTabWidget::pane:top {
   margin-top: -1px;
@@ -466,7 +475,7 @@ QScrollBar:horizontal {
 
 QScrollBar::handle {
   margin: -1px;
-  background: #595959;
+  background: #606060;
   border: 0px solid #1c1c1c; }
 
 QScrollBar::handle:vertical {
@@ -476,7 +485,7 @@ QScrollBar::handle:horizontal {
   min-width: 10px; }
 
 QScrollBar::handle:hover {
-  background: rgba(255, 255, 0, 0); }
+  background: #606060; } /* Scrollbar hover - does NOT support transparency  */
 
 QScrollBar::left-arrow,
 QScrollBar::right-arrow,
@@ -506,7 +515,7 @@ QLineEdit,
 QComboBox,
 QSpinBox,
 QAbstractSpinBox {
-  color: #d8d8d8;
+  color: rgba(255, 255, 255, 0.6); /* Search box text colour */
   padding: 4px;
   min-height: 1em; }
 
@@ -522,7 +531,7 @@ QPlainTextEdit,
 QSpinBox,
 QAbstractSpinBox,
 QComboBox:editable {
-  border: 1px solid #2e2e2e;
+  border: 1px solid #2F2F2F; /* Search box outline when ignored */
   background-color: #121212; }
 
 QSpinBox,
