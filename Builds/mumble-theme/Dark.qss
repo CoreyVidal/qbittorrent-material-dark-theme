@@ -19,12 +19,32 @@
 
  *
 
-Primary Color:
-165, 219, 255
-#A5DBFF
 
-Borders are 12%
+100: C8E8FF (official highlight)
+300: 72B4F5 (official bright)
+800: 356EBF (official dark)
+
+500: 5795DF (mix of 300 and 800)
+
+200 (Primary):
+9DC9F0
+rgba(157, 201, 240, 1)
+
+Branded Surface (Primary at 8% over #121212):
+1D2023
+rgba(157, 201, 240, 0.08)
+
+Branded Container (Primary at 24% over #121212):
+333E47
+rgba(157, 201, 240, 0.24)
+
+Borders (12%):
 2F2F2F
+rgba(255, 255, 255, 0.12)
+
+Checkboxes (54%):
+929292
+rgba(255, 255, 255, 0.54)
 
  */
 TransferListWidget {
@@ -59,15 +79,15 @@ QObject::section {
   padding: 0;
   outline: 0;
   border: 0;
-  selection-background-color: #298ce1;
-  selection-color: #FF00FF;
+  selection-background-color: rgba(157, 201, 240, 0.24); /* 'Settings > RSS > Filters' highlight background colour when selecting text */
+  selection-color: rgba(255, 255, 255, 0.87); /* 'Settings > RSS > Filters' highlight text colour when selecting text */
   alternate-background-color: transparent;
-  color: #FF00FF;
-  border-radius: 1px; }
+  color: rgba(255, 255, 255, 0.87); /* Settings > RSS > Filters text colour */
+  border-radius: 4px; }
 
 QMainWindow,
 QDockWidget {
-  background-color: #121212; } /* Base master wrapper - elevation: 0 */
+  background-color: #121212; } /* Base master wrapper - Elevation: 0dp */
 
 QDialog,
 QWizard *,
@@ -81,7 +101,7 @@ QAbstractScrollArea {
 
 QObject:disabled,
 QObject::item:disabled {
-  color: rgba(255, 255, 255, 0.38); } /* Disabled text in top-menu */
+  color: rgba(255, 255, 255, 0.38); } /* Disabled text in top-menu ✔️ */
 
 a {
   color: #39a5dd;
@@ -116,23 +136,23 @@ QToolBar {
 
 QToolButton {  /* The button icons along the top toolbar: "Add Torrent Link/File" "Delete" "Resume", */
   border: 1px solid transparent;
-  border-radius: 2px;
+  border-radius: 4px;
   padding: 1px;
   margin: 1px; }
 
 QToolButton:on {
-  background-color: #444;
+  background-color: #FF000;
   border: 1px solid #444; }
 
 QToolButton:hover {
-  background-color: rgba(165, 219, 255, 0.04);
+  background-color: rgba(255, 255, 255, 0.04);
   border: 0px solid transparent; }
 
 QToolButton:pressed {
   background-color: #484848; }
 
 QToolBar::separator {
-  background: #555;
+  background: #ff0000;
   height: 1px;
   margin: 4px;
   width: 1px; }
@@ -179,7 +199,7 @@ QMenu::item {
   border-left: 4px solid transparent;
   color: rgba(255, 255, 255, 0.87); /* Menu internal text color */
   padding: 5px 16px;
-  padding-left: 25px;
+  padding-left: 24px;
   border-radius: 2px; }
 
 QMenu::item:selected {
@@ -196,33 +216,36 @@ QMenu::separator {
 
 QMenu::indicator {
   padding-top: 2px;
-  height: 25px;
-  width: 25px; }
+  height: 24px;
+  width: 24px; }
 
 QPushButton { /* QPushButton is for all the buttons along the bottom */
   background-color: #121212; /* This controls a LOT of button backgrounds */
   border: 1px solid #2F2F2F; /* border when ignored */
-  color: rgba(255, 255, 255, 0.60); /* Colour of the text for non-highlighted buttons*/
-  padding: 3px 20px; }
+  border-radius: 4px;
+  /* text-transform: uppercase; this actually works! */
+  color: rgba(255, 255, 255, 0.60); /* Colour of the text for non-highlighted buttons */
+  padding: 4px 20px; }
 
 QPushButton:focus {
-  background-color: rgba(165, 219, 255, 0.12); }
+  background-color: rgba(157, 201, 240, 0.12); }
 
 QPushButton:hover {
-  background-color: rgba(165, 219, 255, 0.04); /* Button hover color */
+  background-color: rgba(157, 201, 240, 0.04); /* Button hover color */
   border-color: #2F2F2F; } /* Hover bottom button border */
 
 QPushButton:hover:focus {
   background-color: rgba(255, 255, 255, 0.12); /* If you hover WHILE it's focused */
-  border-color: rgba(165, 219, 255, 1); }
+  border-color: rgba(157, 201, 240, 1); }
 
 QPushButton:focus {
-  border-color: rgba(165, 219, 255, 1); }
+  /* OLD: border-color: rgba(165, 219, 255, 1); } */
+  border-color: rgba(157, 201, 240, 1); }
 
 QPushButton:pressed,
 QPushButton:pressed:focus {
   background-color: rgba(255, 255, 255, 0.1); /* Colour while pressed down */
-  border-color: rgba(165, 219, 255, 1); /* Selected bottom button border */
+  border-color: rgba(157, 201, 240, 1); /* Selected bottom button border */
   color: rgba(255, 255, 255, 0.87); }
 
 QGroupBox,
@@ -230,7 +253,7 @@ QGroupBox,
 #qwInlineNotice {
   background-color: rgba(255, 255, 255, 0.05); /* Bottom half "General" tab background - Elevation: 1dp */
   border: 0px solid transparent; /* Border */
-  color: rgba(255, 255, 255, 0.87); /* ??? */
+  color: rgba(255, 255, 255, 0.87); /* Headers or titles inside boxes */
   padding: 4px;
   padding-top: 1em; }
 
@@ -240,33 +263,34 @@ QGroupBox::title {
   margin-left: 8px;
   margin-right: 8px; }
 
-QListView {
-  background-color: #121212; /* Background color for "HTTP Sources" tab */
-  border: 1px solid #1c1c1c; }
+QListView { /* Lists, like the "HTTP Sources" tab, and the left window in "Settings" ✔️ */
+  background-color: #121212; /* Background color for list windows tab */
+  border: 1px solid #2F2F2F;
+  border-radius: 4px; }
 
-QListView::item {
-  border-radius: 2px;
-  border: 1px solid transparent;
-  color: #d8d8d8;
-  selection-color: #d8d8d8;
+QListView::item { /* Default list item, not selected ✔️ */
+  border-radius: 0px;
+  border: 0px solid transparent;
+  color: rgba(255, 255, 255, 0.60); /* The colour of unselected text */
+  selection-color: rgba(255, 255, 255, 0.87); /* The colour of selected text */
   padding: 2px 4px; }
 
-QListView::item:hover {
-  background-color: #333;
-  border: 1px solid #333; }
+QListView::item:hover { /* Hover ✔️ */
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 0px solid transparent; }
 
-QListView::item:selected {
-  background-color: #3b3b3b;
-  border: 1px solid #3b3b3b; }
+QListView::item:selected { /* Selected but not active ✔️ */
+  background-color: rgba(157, 201, 240, 0.12);
+  border: 0px solid transparent; }
 
-QListView::item:selected:active {
-  background-color: #3e4f5e;
-  border: 1px solid #3e4f5e; }
+QListView::item:selected:active { /* Selected and active ✔️ */
+  background-color: rgba(157, 201, 240, 0.24);
+  border: 0px solid transparent; }
 
 QTreeView {
   background-color: #000000; /* Top torrent background - this is the main view! */
   color: rgba(255, 255, 255, 0.87); /* Color of text on "Content" tab */
-  selection-background-color: rgba(165, 219, 255, 0.24); /* Color of selection on "Content" tab */
+  selection-background-color: rgba(157, 201, 240, 0.24); /* Color of selection on "Content" tab */
   selection-color: rgba(255, 255, 255, 0.87); /* Colour of the text when selected */
   border: 0px;
   border-radius: 4px; }
@@ -625,36 +649,34 @@ QRadioButton {
   color: #d8d8d8;
   background: transparent; }
 
-QCheckBox::indicator,
+QCheckBox::indicator, /* Checbox default */
 QTreeView::indicator,
 QGroupBox::indicator {
-  background-color: #444;
-  border: 1px solid #444;
-  height: 13px;
-  width: 13px;
+  background-color: transparent;
+  height: 24px;
+  width: 24px;
+  image: url(:/uitheme/controls/check_box_outline_blank.svg);
   margin-top: 1px; }
 
 QMenu::indicator {
   width: 12px;
   left: 6px; }
 
-QCheckBox::indicator:checked,
+QCheckBox::indicator:checked, /* Checkbox checked */
 QMenu::indicator:checked,
 QTreeView::indicator:checked,
 QGroupBox::indicator:checked {
-  image: url(:/uitheme/controls/checkbox_check_dark.svg); }
+  image: url(:/uitheme/controls/check_box.svg); }
 
-QCheckBox::indicator:disabled,
+QCheckBox::indicator:disabled, /* Checkbox disabled (and unchecked) */
 QTreeView::indicator:disabled,
 QGroupBox::indicator:disabled {
-  border: 1px solid #ff0000; /* Donno */
-  background-color: #282828; }
+  image: url(:/uitheme/controls/check_box_outline_blank_disabled.svg); } /* Underlying colour of a checkbox in Settings if checkbox is greyed out */
 
-QCheckBox::indicator:checked:disabled,
+QCheckBox::indicator:checked:disabled, /* Checkbox disabled and checked */
 QTreeView::indicator:checked:disabled,
 QGroupBox::indicator:checked:disabled {
-  border: 1px solid transparent;
-  image: url(:/uitheme/controls/checkbox_check_disabled.svg); }
+  image: url(:/uitheme/controls/check_box_disabled.svg); }
 
 QRadioButton::indicator {
   background: #444;
@@ -700,7 +722,7 @@ QSlider::sub-page {
   border-radius: 2px; }
 
 QSlider::handle {
-  background: #ff0000;
+  background: #FF00FF;
   border: 1px solid #222;
   border-radius: 3px; }
 
@@ -727,28 +749,28 @@ QSlider::handle:disabled {
   background-color: #282828;
   border: 1px solid #282828; }
 
-QCheckBox::indicator:focus,
+QCheckBox::indicator:focus, /* This is all the checkbox hovering accent colours */
 QTreeView::indicator:focus,
 QRadioButton::indicator:focus,
 QGroupBox::indicator:focus,
 QComboBox:focus {
-  background-color: #3e4f5e; }
+  background-color: transparent; }
 
 QCheckBox::indicator:focus:hover,
 QTreeView::indicator:focus:hover,
 QRadioButton::indicator:focus:hover,
 QGroupBox::indicator:focus:hover,
 QComboBox:focus:hover {
-  background-color: #485d6f;
-  border-color: #485d6f; }
+  background-color: transparent;
+  border-color: transparent; }
 
 QCheckBox::indicator:hover,
 QTreeView::indicator:hover,
 QRadioButton::indicator:hover,
 QGroupBox::indicator:hover,
 QComboBox:hover {
-  background-color: #595959;
-  border-color: #555; }
+  background-color: transparent; /* I turned this on to stop the box highlights in settings */
+  border-color: transparent; }
 
 QLineEdit:focus,
 QSpinBox:focus,
