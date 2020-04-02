@@ -152,7 +152,7 @@ QToolButton:pressed {
   background-color: #484848; }
 
 QToolBar::separator {
-  background: #ff0000;
+  background: #2F2F2F;
   height: 1px;
   margin: 4px;
   width: 1px; }
@@ -193,7 +193,7 @@ QMenuBar::item:pressed {
 QMenu {
   background: rgba(255, 255, 255, 0.12); /* Pop-out menu background - Elevation: 8dp */
   border: 1px solid #1c1c1c;
-  color: #0000ff; } /* ??? */
+  color: #1c1c1c; }
 
 QMenu::item {
   border-left: 4px solid transparent;
@@ -288,11 +288,11 @@ QListView::item:selected:active { /* Selected and active ✔️ */
   border: 0px solid transparent; }
 
 QTreeView {
-  background-color: #000000; /* Top torrent background - this is the main view! */
+  background-color: #121212; /* Top torrent background - this is the main view! */
   color: rgba(255, 255, 255, 0.87); /* Color of text on "Content" tab */
-  selection-background-color: rgba(157, 201, 240, 0.24); /* Color of selection on "Content" tab */
+  selection-background-color: rgba(255, 255, 255, 0.12); /* Color of selection on "Content" tab */
   selection-color: rgba(255, 255, 255, 0.87); /* Colour of the text when selected */
-  border: 0px;
+  border: 1px solid #2F2F2F;
   border-radius: 4px; }
 
 QTreeView::item {
@@ -323,7 +323,7 @@ QTreeView::item:focus {
   border: 0px solid transparent; } /* Border while hovering over torrents */
 
 QTreeView::item:selected {
-  background-color: rgba(255, 255, 255, 0.12); /* */
+  background-color: rgba(255, 255, 255, 0.08); /* */
   border: 0px solid transparent;
   border-right: 0;
   border-left: 0; }
@@ -646,13 +646,13 @@ QAbstractCheckBox,
 QTreeView::indicator,
 QGroupBox::indicator,
 QRadioButton {
-  color: #d8d8d8;
+  color: rgba(255, 255, 255, 0.87); /* Text in most of the Settings */
   background: transparent; }
 
-QCheckBox::indicator, /* Checbox default */
+QCheckBox::indicator, /* Checkbox default */
 QTreeView::indicator,
 QGroupBox::indicator {
-  background-color: transparent;
+  background-color: #FF0000; /* Overall colour for checkboxes in Settings but NOT in Content */
   height: 24px;
   width: 24px;
   image: url(:/uitheme/controls/check_box_outline_blank.svg);
@@ -686,7 +686,7 @@ QRadioButton::indicator {
   width: 12px; }
 
 QTreeView::indicator {
-  background: #444; }
+  background: transparent; } /* Background colour of checkboxes on the "Content" tab */
 
 QRadioButton::indicator:disabled {
   background-color: #282828;
