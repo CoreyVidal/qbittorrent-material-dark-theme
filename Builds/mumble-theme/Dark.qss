@@ -216,8 +216,8 @@ QMenu::separator {
 
 QMenu::indicator {
   padding-top: 2px;
-  height: 24px;
-  width: 24px; }
+  height: 48px;
+  width: 48px; }
 
 QPushButton { /* QPushButton is for all the buttons along the bottom */
   background-color: #121212; /* This controls a LOT of button backgrounds */
@@ -225,7 +225,7 @@ QPushButton { /* QPushButton is for all the buttons along the bottom */
   border-radius: 4px;
   /* text-transform: uppercase; this actually works! */
   color: rgba(255, 255, 255, 0.60); /* Colour of the text for non-highlighted buttons */
-  padding: 4px 20px; }
+  padding: 0px 0px; }
 
 QPushButton:focus {
   background-color: rgba(157, 201, 240, 0.12); }
@@ -652,9 +652,9 @@ QRadioButton {
 QCheckBox::indicator, /* Checkbox default */
 QTreeView::indicator,
 QGroupBox::indicator {
-  background-color: #FF0000; /* Overall colour for checkboxes in Settings but NOT in Content */
-  height: 24px;
-  width: 24px;
+  background-color: transparent; /* Overall colour for checkboxes in Settings but NOT in Content */
+  height: 48px;
+  width: 48px;
   image: url(:/uitheme/controls/check_box_outline_blank.svg);
   margin-top: 1px; }
 
