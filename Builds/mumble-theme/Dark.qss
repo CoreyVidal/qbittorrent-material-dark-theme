@@ -83,7 +83,7 @@ QObject::section {
   selection-color: rgba(255, 255, 255, 0.87); /* 'Settings > RSS > Filters' highlight text colour when selecting text */
   alternate-background-color: transparent;
   color: rgba(255, 255, 255, 0.87); /* Settings > RSS > Filters text colour */
-  border-radius: 8px; }
+  border-radius: 8px; } /* Any dark grey card-like surface ("General" tab, and "Settings") */
 
 QMainWindow,
 QDockWidget {
@@ -118,7 +118,7 @@ QToolTip,
 QWhatsThis {
   font-size: 8pt;
   min-height: 1.3em;
-  border: 2px solid #888;
+  border: 2px solid #ff0000; /* DO THIS */
   border-radius: 8px;
   background-color: #121212;
   color: #d8d8d8; }
@@ -488,41 +488,34 @@ QTabBar::tab:bottom:last,
 QTabBar::tab:bottom:only-one {
   border-bottom-right-radius: 2px; }
 
-QScrollBar {
+QScrollBar { /* Scroll bars in in side windows and views (NOT the main torrent downloading view) */
   color: #FF0000;
   background-color: #212121;
   border: 0px solid transparent;
-  border-radius: 8px; }
+  border-radius: 16px; }
 
 QScrollBar:vertical {
-  border: 0px solid transparent;
-  border-radius: 8px;
   width: 32px;
   /* width: 1em; */ }
 
 QScrollBar:horizontal {
-  border: 0px solid transparent;
-  border-radius: 8px;
   height: 32px;
   /* height: 1em; */ }
 
 QScrollBar::handle {
   margin: -1px;
-  background: #333333; /* Colour of the scroll bar! */
+  background: #333333; /* Colour of the scroll bar */
   border: 0px solid transparent;
-  border-radius: 8px;
-  }
+  border-radius: 17px; }
 
 QScrollBar::handle:vertical {
-  border: 0px solid transparent;
   border-radius: 17px; } /* Any higher breaks it completely */
 
 QScrollBar::handle:horizontal {
-  border: 0px solid transparent;
   border-radius: 17px; } /* Any higher breaks it completely */
-
+ 
 QScrollBar::handle:hover {
-  background: #3b3b3b; } /* Scrollbar hover - does NOT support transparency  */
+  background: #3b3b3b; } /* Scrollbar hover */
 
 QScrollBar::left-arrow,
 QScrollBar::right-arrow,
@@ -712,55 +705,67 @@ QRadioButton::indicator:checked {
 QRadioButton::indicator:checked:disabled {
   image: url(:/uitheme/controls/radio_check_disabled.svg); }
 
+QSlider {
+  color: transparent;
+  background-color: transparent;
+  padding: 0px;
+  border: 0px; }
+
+QSlider:horizontal {
+  height: 48px; }
+
+QSlider:vertical {
+  width: 48px; }
+
 QSlider::groove {
-  background: #393939;
-  border: 2px solid #393939;
-  border-radius: 8px; }
+  background: rgba(157, 201, 240, 0.24);
+  border: 0px solid #393939;
+  border-radius: 0px; }
 
 QSlider::groove:horizontal {
-  height: 0.8em; }
+  height: 4px; }
 
 QSlider::groove:vertical {
-  width: 0.8em; }
+  width: 4px; }
 
 QSlider::groove:disabled,
 QSlider::sub-page:disabled {
   background: #282828;
-  border: 2px solid transparent;
+  border: 2px solid #ff0000;
   border-radius: 8px; }
 
 QSlider::sub-page {
-  background: #486d8d;
-  border: 2px solid #486d8d;
-  border-radius: 8px; }
+  background: transparent;
+  border: 2px solid #9DC9F0; /* Colour of the "tail" to the left of the slider */
+  border-radius: 0px; }
 
-QSlider::handle {
-  background: #FF00FF;
-  border: 2px solid #222;
-  border-radius: 8px; }
+QSlider::handle { /* There's a slider in the "Global Download/Upload Speed Limit" popups */
+  background: #9DC9F0; /* The colour of the main draggable handle */
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  width: 24px;
+  height: 0px;
+  border: 0px solid transparent;
+  border-radius: 12px; }
 
 QSlider::handle:horizontal {
-  margin: -5px -1px;
-  width: 4.5em; }
+  margin: -10px 0px; }
 
 QSlider::handle:vertical {
-  margin: -1px -5px;
-  height: 4.5em; }
+  margin: -0px -10px; }
 
 QSlider::handle:focus {
-  background-color: #6d96ba;
-  border-color: #226; }
+  background-color: #9DC9F0; }
 
 QSlider::handle:hover {
-  background-color: #00ff00; }
+  background-color: #9DC9F0; }
 
 QSlider::handle:pressed {
-  background-color: #bbb;
-  border-color: #222; }
+  background-color: #9DC9F0; }
 
 QSlider::handle:disabled {
-  background-color: #282828;
-  border: 2px solid #282828; }
+  background-color: #282828; }
 
 QCheckBox::indicator:focus, /* This is all the checkbox hovering accent colours */
 QTreeView::indicator:focus,
