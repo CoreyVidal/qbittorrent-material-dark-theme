@@ -366,9 +366,9 @@ QTreeView::branch:has-children:open {
   image: url(:/uitheme/controls/branch_open.svg); }
 
 QHeaderView {
-  border-bottom: 1px solid #1c1c1c;
-  border-radius: 8px;
-  background-color: #121212; } /* See below (3 lines down). The unused portion of that.*/
+  border-bottom: 0px solid transparent;
+  border-radius: 0px;
+  background-color: #242424; } /* See below (3 lines down). The unused portion of that.*/
 
 QHeaderView::section {
   background-color: #242424; /* Header just above main windows (both top and bottom half) - Elevation: 4dp */
@@ -376,7 +376,7 @@ QHeaderView::section {
   padding: 4px;
   padding-left: 8px;
   padding-right: 20px;
-  border-radius: 8px; }
+  border-radius: 0px; }
 
 QHeaderView::down-arrow,
 QHeaderView::up-arrow {
@@ -935,13 +935,6 @@ QTreeView::item QComboBox:hover,
 QTreeView::item QLineEdit:hover {
   background: #444; }
 
-QPushButton::menu-indicator {
-    color: #ff0000;
-    background-color: #00ff00;
-    border: 20px solid #0000ff;
-    subcontrol-origin: padding;
-    subcontrol-position: bottom right;
-}
 
 AboutDialog > QTextBrowser,
 AboutDialog QTextEdit {
