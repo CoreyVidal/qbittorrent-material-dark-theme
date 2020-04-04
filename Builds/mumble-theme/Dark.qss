@@ -123,6 +123,7 @@ QWhatsThis {
   background-color: #121212;
   color: #d8d8d8; }
 
+
 QTextBrowser,
 QTextEdit {
   background-color: #121212;
@@ -428,7 +429,7 @@ QTabBar { /* Top-left tabs: Transfer (#), RSS (#) */
   text-transform: uppercase;
   font: 28px;
   font-weight: 500;
-  icon-size: 48px; /* DO THIS */
+  icon-size: 40px; /* DO THIS */
   border: 0px solid transparent;
   border-radius: 0px;
   padding: 0px;
@@ -958,6 +959,13 @@ QTreeView::item QComboBox:hover,
 QTreeView::item QLineEdit:hover {
   background: rgba(255, 255, 255, 0.04); } /* When you hover over text that you can input yourself */
 
+QWidget {  /* Transfers & RSS, icons in torrent list, icons in bottom buttons but NOT images, left window in Options */
+  qproperty-icon: url(:/uitheme/controls/toolbar_ext.svg);
+  icon-size: 40px; }
+
+QToolButton {  /* Buttons in along the top (above the tabs). Also, icon to the left in "Filters" */
+  qproperty-icon: url(:/uitheme/controls/toolbar_ext2.svg);
+  icon-size: 40px; }
 
 AboutDialog > QTextBrowser,
 AboutDialog QTextEdit {
