@@ -967,6 +967,10 @@ QToolButton {  /* Buttons in along the top (above the tabs). Also, icon to the l
   qproperty-icon: url(:/uitheme/controls/toolbar_ext2.svg);
   icon-size: 40px; }
 
+QWidget#softDeleteSelectedTorrents {  /* Buttons in along the top (above the tabs). Also, icon to the left in "Filters" */
+  qproperty-icon: url(:/uitheme/controls/toolbar_ext3.svg);
+  icon-size: 40px; }
+
 AboutDialog > QTextBrowser,
 AboutDialog QTextEdit {
   border: 0; }
