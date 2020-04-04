@@ -118,7 +118,7 @@ QToolTip,
 QWhatsThis {
   font-size: 8pt;
   min-height: 1.3em;
-  border: 2px solid #ff0000; /* DO THIS */
+  border: 2px solid #ff0000;
   border-radius: 8px;
   background-color: #121212;
   color: #d8d8d8; }
@@ -292,7 +292,7 @@ QListView::item:selected:active { /* Selected and active ✔️ */
 QTreeView {
   background-color: #121212; /* Top torrent background - this is the main view! */
   color: rgba(255, 255, 255, 0.87); /* Color of text on "Content" tab */
-  selection-background-color: rgba(255, 255, 255, 0.12); /* Color of selection on "Content" tab */
+  selection-background-color: rgba(255, 255, 255, 0.08); /* Color of line selection on "Content" tab - this colour gets INVERTED for dotted-border */
   selection-color: rgba(255, 255, 255, 0.87); /* Colour of the text when selected */
   border: 2px solid #2F2F2F;
   border-radius: 8px; }
@@ -321,7 +321,7 @@ QTreeView::item:only-one {
 
 QTreeView::item:hover,
 QTreeView::item:focus {
-  background-color: rgba(255, 255, 255, 0.04); /* Hovering over torrents */
+  background-color: rgba(255, 255, 255, 0.04); /* Hovering over torrents, BUT NOT "Content" */
   border: 0px solid transparent; } /* Border while hovering over torrents */
 
 QTreeView::item:selected {
@@ -352,12 +352,14 @@ QTreeView::item:selected:active:last,
 QTreeView::item:selected:active:only-one {
   border: 0px solid transparent; }
 
-QTreeView::branch {
+QTreeView::branch { /* In "Content", the very left branch, or tree, that represents directories */
   border-image: none;
   image: none;
   margin-left: 3px;
   margin-top: 1px;
-  padding-left: 3px; }
+  padding-left: 3px;
+  color: #ff0000;
+  background-color: #00ff00; }
 
 QTreeView::branch:has-children:closed {
   image: url(:/uitheme/controls/branch_closed.svg); }
@@ -365,13 +367,13 @@ QTreeView::branch:has-children:closed {
 QTreeView::branch:has-children:open {
   image: url(:/uitheme/controls/branch_open.svg); }
 
-QHeaderView {
+QHeaderView { /* Header just above main windows (both top and bottom half) - Elevation: 4dp */
   border-bottom: 0px solid transparent;
   border-radius: 0px;
-  background-color: #242424; } /* See below (3 lines down). The unused portion of that.*/
+  background-color: #242424; } /* The unused portion of headers */
 
 QHeaderView::section {
-  background-color: #242424; /* Header just above main windows (both top and bottom half) - Elevation: 4dp */
+  background-color: #242424; /* The USED portion of headers (contains content) */
   color: #d8d8d8;
   padding: 4px;
   padding-left: 8px;
@@ -418,75 +420,95 @@ QTabWidget::pane:bottom {
 QTabWidget::tab-bar {
   background-color: #1D1D1D; }
 
+QTabBar { /* Top-left tabs: Transfer (#), RSS (#) */
+  background-color: transparent; /* Tab colour when not selected */
+  min-height: 96px;
+  max-height: 96px;
+  height: 96px;
+  text-transform: uppercase;
+  font: 28px;
+  font-weight: 500;
+  icon-size: 48px; /* DO THIS */
+  border: 0px solid transparent;
+  border-radius: 0px;
+  padding: 0px;
+  margin: 0px; }
+
 QTabBar::tab {
-  color: #ccc;
-  background-color: #1e1e1e;
-  padding: 6px 16px;
-  border-radius: 8px;
-  border: 2px solid #1c1c1c;
-  border-right: 0; }
+  min-width: 180px;
+  min-height: 92px;
+  max-height: 92px;
+  height: 92px;
+  color: rgba(255, 255, 255, 0.54); /* Text colour when not selected */
+  background-color: transparent;
+  padding: 0px 32px;
+  margin: 0px;
+  border-radius: 0px; }
 
 QTabBar::tab:last,
 QTabBar::tab:only-one {
-  border-right: 1px solid #1c1c1c; }
+  /* border-right: 1px solid #1c1c1c; */ }
 
 QTabBar::tab:hover {
-  background-color: #3e4f5e; }
+  background-color: rgba(157, 201, 240, 0.04);
+  border-bottom: 4px solid transparent; }
 
 QTabBar::tab:disabled {
   color: #484848; }
 
 QTabBar::tab:selected {
-  color: #d8d8d8;
-  background-color: #2d2d2d; }
-
+  color: rgba(157, 201, 240, 0.87);
+  background-color: rgba(157, 201, 240, 0.24);
+  border-bottom: 4px solid #9DC9F0; }
+/*
 QTabBar::tab:top {
-  border-bottom: 0;
-  margin-bottom: 1px; }
+  border-bottom: 0px;
+  margin-bottom: 0px; }
 
 QTabBar::tab:right {
-  border-left: 0;
-  margin-left: 1px; }
+  border-left: 0px;
+  margin-left: 0px; }
 
 QTabBar::tab:left {
-  border-right: 0;
-  margin-right: 1px; }
+  border-right: 0px;
+  margin-right: 0px; }
 
 QTabBar::tab:bottom {
-  border-top: 0;
-  margin-top: 1px; }
+  border-top: 0px;
+  margin-top: 0px; }
 
 QTabBar::tab:top:selected {
-  padding-bottom: 7px;
-  margin-bottom: 0; }
+  padding-bottom: 0px;
+  margin-bottom: 0px; }
 
 QTabBar::tab:right:selected {
   padding-left: 7px;
   margin-left: 0; }
 
 QTabBar::tab:left:selected {
-  padding-right: 7px;
-  margin-right: 0; }
+  padding-right: 0px;
+  margin-right: 0px; }
 
 QTabBar::tab:bottom:selected {
-  padding-top: 7px;
-  margin-top: 0; }
+  padding-top: 0px;
+  margin-top: 0px; }
 
 QTabBar::tab:top:first,
 QTabBar::tab:top:only-one {
-  border-top-left-radius: 2px; }
+  border-top-left-radius: 0px; }
 
 QTabBar::tab:top:last,
 QTabBar::tab:top:only-one {
-  border-top-right-radius: 2px; }
+  border-top-right-radius: 0px; }
 
 QTabBar::tab:bottom:first,
 QTabBar::tab:bottom:only-one {
-  border-bottom-left-radius: 2px; }
+  border-bottom-left-radius: 0px; }
 
 QTabBar::tab:bottom:last,
 QTabBar::tab:bottom:only-one {
-  border-bottom-right-radius: 2px; }
+  border-bottom-right-radius: 0px; }
+*/
 
 QScrollBar { /* Scroll bars in in side windows and views (NOT the main torrent downloading view) */
   color: #FF0000;
@@ -922,7 +944,8 @@ QListView::item QListWidgetItem,
 QListView::item QLineEdit,
 QTreeView::item QComboBox,
 QTreeView::item QLineEdit {
-  background: #FF0000;
+  background: #121212; /* When you rename a torrent and can enter text, this is the background of the text input */
+  color: rgba(255, 255, 255, 0.87);
   margin: 8;
   padding-top: 0;
   padding-bottom: 0;
@@ -933,7 +956,7 @@ QListView::item QListWidgetItem:hover,
 QListView::item QLineEdit:hover,
 QTreeView::item QComboBox:hover,
 QTreeView::item QLineEdit:hover {
-  background: #444; }
+  background: rgba(255, 255, 255, 0.04); } /* When you hover over text that you can input yourself */
 
 
 AboutDialog > QTextBrowser,
