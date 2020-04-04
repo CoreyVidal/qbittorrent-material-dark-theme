@@ -47,26 +47,6 @@ Checkboxes (54%):
 rgba(255, 255, 255, 0.54)
 
  */
-TransferListWidget {
-  qproperty-downloadingStateForeground: limegreen;
-  qproperty-forcedDownloadingStateForeground: limegreen;
-  qproperty-downloadingMetadataStateForeground: limegreen;
-  qproperty-allocatingStateForeground: #cccccc;
-  qproperty-stalledDownloadingStateForeground: #cccccc;
-  qproperty-stalledUploadingStateForeground: #cccccc;
-  qproperty-uploadingStateForeground: #63b8ff;
-  qproperty-forcedUploadingStateForeground: #63b8ff;
-  qproperty-pausedDownloadingStateForeground: #fa8090;
-  qproperty-pausedUploadingStateForeground: #4f94cd;
-  qproperty-errorStateForeground: red;
-  qproperty-missingFilesStateForeground: red;
-  qproperty-queuedDownloadingStateForeground: #00cdcd;
-  qproperty-queuedUploadingStateForeground: #00cdcd;
-  qproperty-checkingDownloadingStateForeground: #00cdcd;
-  qproperty-checkingUploadingStateForeground: #00cdcd;
-  qproperty-checkingResumeDataStateForeground: #00cdcd;
-  qproperty-movingStateForeground: #00cdcd;
-  qproperty-unknownStateForeground: red; }
 
 QTabWidget QListView::item {
   padding: 0px; }
@@ -373,6 +353,12 @@ QTreeView::branch:has-children:closed {
   image: url(:/uitheme/controls/branch_closed.svg); }
 
 QTreeView::branch:has-children:open {
+  image: url(:/uitheme/controls/branch_open.svg); }
+
+QCheckBox::branch:has-children:closed {
+  image: url(:/uitheme/controls/branch_closed.svg); }
+
+QCheckBox::branch:has-children:open {
   image: url(:/uitheme/controls/branch_open.svg); }
 
 QHeaderView { /* Header just above main windows (both top and bottom half) - Elevation: 4dp */
@@ -994,3 +980,25 @@ AboutDialog QTextEdit {
 
 ViewCert {
   min-height: 600px; }
+
+TransferListWidget {
+  qproperty-downloadingStateForeground: limegreen;
+  qproperty-forcedDownloadingStateForeground: limegreen;
+  qproperty-downloadingMetadataStateForeground: limegreen;
+  qproperty-allocatingStateForeground: #cccccc;
+  qproperty-stalledDownloadingStateForeground: #cccccc;
+  qproperty-stalledUploadingStateForeground: #cccccc;
+  qproperty-uploadingStateForeground: #63b8ff;
+  qproperty-forcedUploadingStateForeground: #63b8ff;
+  qproperty-pausedDownloadingStateForeground: #fa8090;
+  qproperty-pausedUploadingStateForeground: #4f94cd;
+  qproperty-errorStateForeground: red;
+  qproperty-missingFilesStateForeground: red;
+  qproperty-queuedDownloadingStateForeground: #00cdcd;
+  qproperty-queuedUploadingStateForeground: #00cdcd;
+  qproperty-checkingDownloadingStateForeground: #00cdcd;
+  qproperty-checkingUploadingStateForeground: #00cdcd;
+  qproperty-checkingResumeDataStateForeground: #00cdcd;
+  qproperty-movingStateForeground: #00cdcd;
+  qproperty-unknownStateForeground: red; }
+  
