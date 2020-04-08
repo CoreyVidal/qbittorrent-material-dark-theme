@@ -103,13 +103,14 @@ QObject::separator:hover {
 
 QToolTip,
 QWhatsThis {
-  font-size: 8pt;
-  min-height: 1.3em;
-  border: 2px solid #ff0000;
-  border-radius: 8px;
-  background-color: #121212;
-  color: #d8d8d8; }
-
+  padding: 16px;
+  margin: 0px;
+  border: 0px solid transparent;
+  border-radius: 4px;
+  background-color: #595959; /* STRUGGLING to curve this */
+  /* background-color: transparent; */
+  font-size: 24px;
+  color: rgba(255, 255, 255, 1); }
 
 QTextBrowser,
 QTextEdit {
