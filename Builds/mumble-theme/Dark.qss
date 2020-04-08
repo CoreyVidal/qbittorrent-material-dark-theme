@@ -952,17 +952,91 @@ QTreeView::item QComboBox:hover,
 QTreeView::item QLineEdit:hover {
   background: rgba(255, 255, 255, 0.04); } /* When you hover over text that you can input yourself */
 
-QWidget {  /* Transfers & RSS, icons in torrent list, icons in bottom buttons but NOT images, left window in Options */
-  qproperty-icon: url(:/uitheme/controls/toolbar_ext.svg);
-  icon-size: 40px; }
+/*
 
-QToolButton {  /* Buttons in along the top (above the tabs). Also, icon to the left in "Filters" */
-  qproperty-icon: url(:/uitheme/controls/toolbar_ext2.svg);
-  icon-size: 40px; }
-
-QWidget#softDeleteSelectedTorrents {  /* Buttons in along the top (above the tabs). Also, icon to the left in "Filters" */
+QToolBar#actionDownloadFromURL {
   qproperty-icon: url(:/uitheme/controls/toolbar_ext3.svg);
+  qproperty-iconWidth: 24;
+  qproperty-iconHeight: 24;
+  color: #FFFF00;
+  background-color: #00FFFF;
+  icon-size: 40px;
+  }
+
+QToolBarButton#actionDownloadFromURL {
+  qproperty-icon: url(:/uitheme/controls/toolbar_ext3.svg);
+  qproperty-iconWidth: 24;
+  qproperty-iconHeight: 24;
+  color: #FFFF00;
+  background-color: #00FFFF;
+  icon-size: 40px;
+  }
+
+  QToolButton#actionDownloadFromURL {
+  qproperty-icon: url(:/uitheme/controls/toolbar_ext3.svg);
+  qproperty-iconWidth: 24;
+  qproperty-iconHeight: 24;
+  color: #FFFF00;
+  background-color: #00FFFF;
+  icon-size: 40px;
+  }
+
+QWidget##actionDownloadFromURL {
+  qproperty-icon: url(:/uitheme/controls/toolbar_ext3.svg);
+  qproperty-iconWidth: 24;
+  qproperty-iconHeight: 24;
+  color: #FFFF00;
+  background-color: #00FFFF;
+  icon-size: 40px;
+  }
+
+QPalette {
+  qproperty-icon: url(:/uitheme/controls/toolbar_ext3.svg);
+  qproperty-iconWidth: 24;
+  qproperty-iconHeight: 24;
+  color: #FFFF00;
+  background-color: #00FFFF;
+  icon-size: 40px;
+  }
+
+*/
+/*
+/*
+/* QWidget {  /* Transfers & RSS, icons in torrent list, icons in bottom buttons but NOT images, left window in Options */
+/*  qproperty-icon: url(:/uitheme/controls/toolbar_ext.svg);
+  icon-size: 40px; } */
+
+/*
+MainWindow {
+  qproperty-icon: url(:/uitheme/controls/toolbar_ext2.svg);
+  qproperty-iconWidth: 48;
+  qproperty-iconHeight: 24;
+  color: #FFFF00;
+  background-color: #00FFFF;
   icon-size: 40px; }
+*/
+
+
+QToolButton {
+  qproperty-icon: url(:/uitheme/controls/toolbar_ext3.svg);
+   }
+
+/*
+TransferListModel {
+  qproperty-text-color: #00ff00;
+  qproperty-color: #00ff00;
+  qproperty-background-color: #0000ff;
+  qproperty-icon: url(:/uitheme/controls/toolbar_ext3.svg);
+}
+
+/*
+TransferListModel::downloadingTextColor {
+  qproperty-text-color: #00ff00;
+  qproperty-color: #00ff00;
+  qproperty-background-color: #0000ff;
+  qproperty-icon: url(:/uitheme/controls/toolbar_ext3.svg);
+}
+*/
 
 AboutDialog > QTextBrowser,
 AboutDialog QTextEdit {
