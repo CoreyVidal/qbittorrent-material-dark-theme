@@ -84,14 +84,14 @@ QCalendarWidget *,
   color: #d8d8d8; }
 
 QAbstractScrollArea {
-  background-color: #121212; }
+  background-color: #121212; } /* Elevation: 0dp */
 
 QObject:disabled,
 QObject::item:disabled {
   color: rgba(255, 255, 255, 0.38); } /* Disabled text in top-menu ✔️ */
 
 a {
-  color: #39a5dd;
+  color: #9DC9F0;
   text-decoration: none; }
 
 QObject::separator {
@@ -114,7 +114,7 @@ QWhatsThis {
 
 QTextBrowser,
 QTextEdit {
-  background-color: #121212;
+  background-color: #121212; /* Elevation: 0dp */
   color: #d8d8d8;
   border: 2px solid #1c1c1c; }
 
@@ -255,7 +255,7 @@ QGroupBox::title {
   margin-right: 8px; }
 
 QListView { /* Lists, like the "HTTP Sources" tab, and the left window in "Settings" ✔️ */
-  background-color: #121212; /* Background color for list windows tab */
+  background-color: #121212; /* Background color for list windows tab - Elevation: 0dp */
   border: 2px solid #2F2F2F;
   border-radius: 8px; }
 
@@ -279,7 +279,7 @@ QListView::item:selected:active { /* Selected and active ✔️ */
   border: 0px solid transparent; }
 
 QTreeView {
-  background-color: #121212; /* Top torrent background - this is the main view! */
+  background-color: #121212; /* Top torrent background - this is the main view! - Elevation: 0dp */
   color: rgba(255, 255, 255, 0.87); /* Color of text on "Content" tab */
   selection-background-color: rgba(255, 255, 255, 0.08); /* Color of line selection on "Content" tab - this colour gets INVERTED for dotted-border */
   selection-color: rgba(255, 255, 255, 0.87); /* Colour of the text when selected */
@@ -348,7 +348,7 @@ QTreeView::branch { /* In "Content", the very left branch, or tree, that represe
   margin-top: 1px;
   padding-left: 3px;
   color: #ff0000;
-  background-color: #00ff00; }
+  background-color: transparent; }
 
 QTreeView::branch:has-children:closed {
   image: url(:/uitheme/controls/branch_closed.svg); }
@@ -389,7 +389,7 @@ QHeaderView::up-arrow {
   image: url(:/uitheme/controls/arrow_up.svg); }
 
 QTabWidget::pane {
-  background-color: #121212; /* Outline all the way around everything */
+  background-color: #121212; /* Outline all the way around everything - Elevation: 0dp */
   border: 0px solid transparent; }
 
 QTabWidget::pane:top {
@@ -434,7 +434,7 @@ QTabBar::tab {
   min-height: 92px;
   max-height: 92px;
   height: 92px;
-  color: rgba(255, 255, 255, 0.54); /* Text colour when not selected */
+  color: rgba(255, 255, 255, 0.60); /* Text colour when not selected */
   background-color: transparent;
   padding: 0px 32px;
   margin: 0px;
@@ -556,13 +556,13 @@ QAbstractScrollArea::corner {
   border-radius: 8px;
   border-top: 1px solid #1c1c1c;
   border-left: 1px solid #1c1c1c;
-  background: #121212; }
+  background: #121212; } /* Elevation: 0dp */
 
 QLineEdit,
 QComboBox,
 QSpinBox,
 QAbstractSpinBox {
-  color: rgba(255, 255, 255, 0.6); /* Search box text colour */
+  color: rgba(255, 255, 255, 0.60); /* Search box text colour */
   padding: 4px;
   min-height: 1em; }
 
@@ -579,7 +579,7 @@ QSpinBox,
 QAbstractSpinBox,
 QComboBox:editable {
   border: 2px solid #2F2F2F; /* Search box outline when ignored */
-  background-color: #121212; }
+  background-color: #121212; } /* Elevation: 0dp */
 
 QSpinBox,
 QAbstractSpinBox {
@@ -602,7 +602,7 @@ QComboBox::drop-down,
 QAbstractSpinBox::drop-down,
 QSpinBox::drop-down,
 QDateTimeEdit::drop-down {
-  background-color: #121212;
+  background-color: #121212; /* Elevation: 0dp */
   border: 0;
   margin-left: 4px;
   margin-right: 12px;
@@ -658,7 +658,7 @@ QAbstractSpinBox::up-button:disabled {
   image: url(:/uitheme/controls/arrow_up_disabled.svg); }
 
 QComboBox QAbstractItemView {
-  background-color: #121212;
+  background-color: #121212; /* Elevation: 0dp */
   border: 2px solid #1c1c1c;
   color: #d8d8d8;
   border-radius: 8px; }
@@ -811,7 +811,7 @@ QLineEdit:focus,
 QSpinBox:focus,
 QAbstractSpinBox:focus,
 QComboBox:editable:focus {
-  background-color: #121212; }
+  background-color: #121212; } /* Elevation: 0dp */
 
 QLineEdit:focus:hover,
 QSpinBox:focus:hover,
@@ -823,7 +823,7 @@ QLineEdit:hover,
 QSpinBox:hover,
 QAbstractSpinBox:hover,
 QComboBox:editable:hover {
-  background-color: #121212;
+  background-color: #121212; /* Elevation: 0dp */
   border-color: #555; }
 
 QCheckBox::indicator:focus,
@@ -939,7 +939,7 @@ QListView::item QListWidgetItem,
 QListView::item QLineEdit,
 QTreeView::item QComboBox,
 QTreeView::item QLineEdit {
-  background: #121212; /* When you rename a torrent and can enter text, this is the background of the text input */
+  background: #121212; /* When you rename a torrent and can enter text, this is the background of the text input - Elevation: 0dp */
   color: rgba(255, 255, 255, 0.87);
   margin: 8;
   padding-top: 0;
