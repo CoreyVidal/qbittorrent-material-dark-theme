@@ -61,7 +61,8 @@ QObject::handle,
 QObject::tab-bar,
 QObject::tab,
 QObject::section {
-  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: Roboto, "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 33px;
   margin: 0;
   padding: 0;
   outline: 0;
@@ -279,114 +280,129 @@ QListView::item:selected:active { /* Selected and active ✔️ */
   border: 0px solid transparent; }
 
 QTreeView {
+  margin: 0px;
+  padding: 0px;
   background-color: #121212; /* Top torrent background - this is the main view! - Elevation: 0dp */
   color: rgba(255, 255, 255, 0.87); /* Color of text on "Content" tab */
   selection-background-color: rgba(255, 255, 255, 0.08); /* Color of line selection on "Content" tab - this colour gets INVERTED for dotted-border */
   selection-color: rgba(255, 255, 255, 0.87); /* Colour of the text when selected */
   border: 2px solid #2F2F2F;
+  qproperty-indentation: 48;
   border-radius: 8px; }
 
 QTreeView::item {
+  margin: 0px 0px;
   min-width: 60px;
-  border: 2px solid transparent;
+  min-height: 98px;
+  max-height: 98px;
+  height: 98px;
+  border: 1px solid rgba(255, 255, 255, 0.12); /* Gets doubled by previous/following items */
   border-left: 0;
   border-right: 0;
   color: rgba(255, 255, 255, 0.87); /* Colour of ALL text */
   padding: 2px 4px;
   selection-color: rgba(255, 255, 255, 0.87); /* Colour of selected text */
-  border-radius: 8px; }
+  border-radius: 0px; }
 
 QTreeView::item:first,
 QTreeView::item:only-one {
-  border-left: 0px solid transparent; /* Left-most border when not selected */
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px; }
+  padding-left: 28px;
+  }
 
 QTreeView::item:last,
 QTreeView::item:only-one {
-  border-right: 0px solid transparent;
+  /* border-right: 0px solid transparent;
   border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px; }
+  border-bottom-right-radius: 2px; */
+  }
 
 QTreeView::item:hover,
 QTreeView::item:focus {
   background-color: rgba(255, 255, 255, 0.04); /* Hovering over torrents, BUT NOT "Content" */
-  border: 0px solid transparent; } /* Border while hovering over torrents */
+  /* border: 0px solid transparent; /* Border while hovering over torrents */
+  }
 
 QTreeView::item:selected {
-  background-color: rgba(255, 255, 255, 0.08); /* */
-  border: 0px solid transparent;
-  border-right: 0;
-  border-left: 0; }
+  background-color: rgba(255, 255, 255, 0.08); }
 
 QTreeView::item:selected:first,
 QTreeView::item:selected:only-one {
-  border-left: 0px solid transparent; } /* Internal border on the VERY left */
+  } /* Internal border on the VERY left */
 
 QTreeView::item:selected:last,
 QTreeView::item:selected:only-one {
-  border-right: 0px solid transparent; }
+  }
 
 QTreeView::item:selected:active {
   background-color: rgba(255, 255, 255, 0.12); /* Selected torrent */
-  border: 0px solid transparent; /* Horizontal span across MOST of the torrent, but not all */
-  border-right: 0;
-  border-left: 0; }
+  }
 
 QTreeView::item:selected:active:first,
-QTreeView::item:selected:active:only-one {
-  border: 0px solid transparent; } /* Left-most border */
+QTreeView::item:selected:active:only-one { /* Left-most border */
+  }
 
 QTreeView::item:selected:active:last,
 QTreeView::item:selected:active:only-one {
-  border: 0px solid transparent; }
+  }
 
 QTreeView::branch { /* In "Content", the very left branch, or tree, that represents directories */
+  margin: 0px;
+  border: 0px;
+  border-radius: 0px;
+  padding: 0px;
   border-image: none;
   image: none;
-  margin-left: 3px;
-  margin-top: 1px;
-  padding-left: 3px;
-  color: #ff0000;
-  background-color: transparent; }
+  color: transparent;
+  background-color: transparent;
+  min-width: 48px;
+  max-width: 48px;
+  width: 48px;
+  }
 
 QTreeView::branch:has-children:closed {
-  image: url(:/uitheme/controls/branch_closed.svg); }
+  image: url(:/uitheme/controls/expand_more.svg); }
 
 QTreeView::branch:has-children:open {
-  image: url(:/uitheme/controls/branch_open.svg); }
+  image: url(:/uitheme/controls/expand_less.svg); }
 
 QCheckBox::branch:has-children:closed {
-  image: url(:/uitheme/controls/branch_closed.svg); }
+  image: url(:/uitheme/controls/expand_more.svg); }
 
 QCheckBox::branch:has-children:open {
-  image: url(:/uitheme/controls/branch_open.svg); }
+  image: url(:/uitheme/controls/expand_less.svg); }
 
 QHeaderView { /* Header just above main windows (both top and bottom half) - Elevation: 4dp */
-  border-bottom: 0px solid transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
   border-radius: 0px;
-  background-color: #242424; } /* The unused portion of headers */
+  qproperty-defaultAlignment: AlignCenter;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: transparent; } /* The unused portion of headers */
 
 QHeaderView::section {
-  background-color: #242424; /* The USED portion of headers (contains content) */
-  color: #d8d8d8;
-  padding: 4px;
-  padding-left: 8px;
-  padding-right: 20px;
-  border-radius: 0px; }
+  border-radius: 0px;
+  background-color: transparent; /* The USED portion of headers (contains content) */
+  color: rgba(255, 255, 255, 0.87);
+  font-weight: 500;
+  qproperty-defaultAlignment: AlignCenter;
+  padding: 0px 16px;
+  height: 105px;
+  border-right: 2px solid rgba(255, 255, 255, 0.12); }
 
 QHeaderView::down-arrow,
 QHeaderView::up-arrow {
-  margin: 1px;
+  margin: 0px;
+  qproperty-defaultAlignment: AlignCenter;
   top: 1px;
-  right: 5px;
-  width: 14px; }
+  right: 30px;
+  width: 48px; }
 
 QHeaderView::down-arrow {
-  image: url(:/uitheme/controls/arrow_down.svg); }
+  image: url(:/uitheme/controls/arrow_downward.svg); }
 
 QHeaderView::up-arrow {
-  image: url(:/uitheme/controls/arrow_up.svg); }
+  image: url(:/uitheme/controls/arrow_upward.svg); }
 
 QTabWidget::pane {
   background-color: #121212; /* Outline all the way around everything - Elevation: 0dp */
@@ -423,7 +439,7 @@ QTabBar { /* Top-left tabs: Transfer (#), RSS (#) */
   text-transform: uppercase;
   font: 28px;
   font-weight: 500;
-  icon-size: 40px; /* DO THIS */
+  icon-size: 40px;
   border: 0px solid transparent;
   border-radius: 0px;
   padding: 0px;
@@ -675,11 +691,13 @@ QRadioButton {
 QCheckBox::indicator, /* Checkbox default */
 QTreeView::indicator,
 QGroupBox::indicator {
+  padding: 0px;
+  border: 0px;
+  margin: 0px;
   background-color: transparent; /* Overall colour for checkboxes in Settings but NOT in Content */
   height: 48px;
   width: 48px;
-  image: url(:/uitheme/controls/check_box_outline_blank.svg);
-  margin-top: 1px; }
+  image: url(:/uitheme/controls/check_box_outline_blank.svg); }
 
 QMenu::indicator {
   width: 12px;
@@ -709,12 +727,14 @@ QRadioButton::indicator {
   width: 12px; }
 
 QTreeView::indicator {
+  margin-left: -3px;
   background: transparent; } /* Background colour of checkboxes on the "Content" tab */
 
 QRadioButton::indicator:disabled {
   background-color: #282828;
-  margin: 1px;
-  border: 2px solid transparent; }
+  padding: 0px;
+  border: 0px;
+  margin: 0px; }
 
 QRadioButton::indicator:checked {
   image: url(:/uitheme/controls/radio_check_dark.svg); }
