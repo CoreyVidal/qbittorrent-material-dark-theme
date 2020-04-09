@@ -1,5 +1,5 @@
 set SCRIPT_DIR=mumble-theme
-set PATH=%PATH%;C:\Users\Prince\Downloads\Compressed\qtsass_0.2.2_win64;
+set PATH=%PATH%;C:\path\qtsass;
 pushd %SCRIPT_DIR%\source
 qtsass -o ../Dark.qss Dark.scss
 popd
