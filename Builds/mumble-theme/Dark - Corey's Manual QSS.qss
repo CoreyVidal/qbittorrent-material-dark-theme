@@ -1,0 +1,1013 @@
+/*
+ * Mumble Dark Theme
+ * https://github.com/mumble-voip/mumble-theme
+ *
+ * Based on MetroMumble Theme by xPoke
+ * https://github.com/xPoke
+ *
+ * Originally forked from Flat Mumble Theme by xPaw (xpaw.ru)
+ *
+ * Licensed under The Do What The Fuck You Want To Public License (WTFPL)
+ */
+/*
+
+ * YOU SHOULD NOT MODIFY THIS FILE
+
+ * Edit the files in the "source" folder instead.
+
+ * See project README
+
+ *
+
+
+100: C8E8FF (official highlight)
+300: 72B4F5 (official bright)
+800: 356EBF (official dark)
+
+500: 5795DF (mix of 300 and 800)
+
+200 (Primary):
+9DC9F0
+rgba(157, 201, 240, 1)
+
+Branded Surface (Primary at 8% over #121212):
+1D2023
+rgba(157, 201, 240, 0.08)
+
+Branded Container (Primary at 24% over #121212):
+333E47
+rgba(157, 201, 240, 0.24)
+
+Borders (12%):
+2F2F2F
+rgba(255, 255, 255, 0.12)
+
+Checkboxes (54%):
+929292
+rgba(255, 255, 255, 0.54)
+
+ */
+
+QTabWidget QListView::item {
+  padding: 0px; }
+
+QTabWidget QListView QLabel {
+  padding: -2px;
+  font-size: 1.1em; }
+
+QObject,
+QObject::separator,
+QObject::handle,
+QObject::tab-bar,
+QObject::tab,
+QObject::section {
+  font-family: Roboto, "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 33px;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  selection-background-color: rgba(157, 201, 240, 0.24); /* 'Settings > RSS > Filters' highlight background colour when selecting text */
+  selection-color: rgba(255, 255, 255, 0.87); /* 'Settings > RSS > Filters' highlight text colour when selecting text */
+  alternate-background-color: transparent;
+  color: rgba(255, 255, 255, 0.87); /* Settings > RSS > Filters text colour */
+  border-radius: 8px; } /* Any dark grey card-like surface ("General" tab, and "Settings") */
+
+QMainWindow,
+QDockWidget {
+  background-color: #121212; } /* Base master wrapper - Elevation: 0dp */
+
+QDialog,
+QWizard *,
+QCalendarWidget *,
+#qswPages > QObject {
+  background-color: #1D1D1D;
+  color: #d8d8d8; }
+
+QAbstractScrollArea {
+  background-color: #121212; } /* Elevation: 0dp */
+
+QObject:disabled,
+QObject::item:disabled {
+  color: rgba(255, 255, 255, 0.38); } /* Disabled text in top-menu ✔️ */
+
+a {
+  color: #9DC9F0;
+  text-decoration: none; }
+
+QObject::separator {
+  height: 4px;
+  width: 4px; }
+
+QObject::separator:hover {
+  background: #333; }
+
+QToolTip,
+QWhatsThis {
+  padding: 16px;
+  margin: 0px;
+  border: 0px solid transparent;
+  border-radius: 4px;
+  background-color: #595959; /* STRUGGLING to curve this */
+  /* background-color: transparent; */
+  font-size: 24px;
+  color: rgba(255, 255, 255, 1); }
+
+QTextBrowser,
+QTextEdit {
+  background-color: #121212; /* Elevation: 0dp */
+  color: #d8d8d8;
+  border: 2px solid #1c1c1c; }
+
+QToolBar {
+  background-color: rgba(255, 255, 255, 0.09); /* Very top horizontal toolbar with icons - Elevation: 4dp */
+  spacing: 0;
+  padding: 2px; }
+
+QToolButton {  /* The button icons along the top toolbar: "Add Torrent Link/File" "Delete" "Resume", */
+  border: 2px solid transparent; /* border when ignored */
+  border-radius: 8px;
+  padding: 1px;
+  margin: 1px; }
+
+QToolButton:on {
+  background-color: #FF0000; }
+
+QToolButton:hover {
+  background-color: rgba(255, 255, 255, 0.04); }
+
+QToolButton:pressed {
+  background-color: rgba(255, 255, 255, 0.1); }
+
+QToolBar::separator {
+  background: #2F2F2F;
+  border: 0px;
+  height: 1px;
+  margin: 4px;
+  width: 2px; }
+
+QToolButton#qt_toolbar_ext_button {
+  min-width: 8px;
+  width: 8px;
+  padding: 1px;
+  qproperty-icon: url(:/uitheme/controls/toolbar_ext.svg); }
+
+QToolBar::handle:horizontal {
+  image: url(:/uitheme/controls/handle_horizontal.svg);
+  width: 8px;
+  padding: 4px; }
+
+QToolBar::handle:vertical {
+  image: url(:/uitheme/controls/handle_vertical.svg);
+  height: 8px;
+  padding: 4px; }
+
+QMenuBar::item { /* The very top Windows top menu bar */
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.87);
+  padding: 4px 12px; }
+
+QMenuBar::item:selected {
+  background: rgba(255, 255, 255, 0.07); /* Very top menu item (hover) - Elevation: 2dp */
+  color: rgba(255, 255, 255, 0.87); } /* Very top text (hover): File, Edit, View, Tools, Help */
+
+QMenuBar::item:pressed {
+  background: rgba(255, 255, 255, 0.12); /* Very top menu item (hover) - Elevation: 8dp */
+  color: rgba(255, 255, 255, 0.87); } /* Very top text (clicked/held): File, Edit, View, Tools, Help */
+
+QMenu {
+  background: rgba(255, 255, 255, 0.12); /* Pop-out menu background - Elevation: 8dp */
+  border: 2px solid #1c1c1c;
+  color: #1c1c1c; }
+
+QMenu::item {
+  border-left: 4px solid transparent;
+  color: rgba(255, 255, 255, 0.87); /* Menu internal text color */
+  padding: 5px 16px;
+  padding-left: 24px;
+  border-radius: 8px; }
+
+QMenu::item:selected {
+  background: rgba(255, 255, 255, 0.04); /* The color when hovering over the menu */
+  border-left: 4px solid transparent; }
+
+QMenu::item:disabled {
+  border-left: 4px solid transparent;
+  background: transparent; }
+
+QMenu::separator {
+  background: #555;
+  height: 1px; }
+
+QMenu::indicator {
+  padding-top: 2px;
+  height: 48px;
+  width: 48px; }
+
+QPushButton { /* QPushButton is for all the buttons along the bottom */
+  background-color: transparent; /* This controls a LOT of button backgrounds */
+  border: 2px solid #2F2F2F; /* border when ignored */
+  border-radius: 8px;
+  /* text-transform: uppercase; this actually works! */
+  color: rgba(157, 201, 240, 0.60); /* Colour of the text for non-highlighted buttons */
+  padding: 0px; 
+  margin: 0px;
+  min-width: 128px;
+  min-height: 68px;
+  max-height: 68px;
+  height: 68px;
+  padding-left: 32px;
+  padding-right: 32px;
+  margin: 16px 32px;
+  }
+
+QPushButton:focus {
+  background-color: rgba(157, 201, 240, 0.12); }
+
+QPushButton:hover {
+  background-color: rgba(157, 201, 240, 0.04); } /* Button hover color */
+
+QPushButton:hover:focus {
+  background-color: rgba(255, 255, 255, 0.1); /* If you hover while it's focused */
+  border-color: rgba(157, 201, 240, 1); }
+
+QPushButton:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(157, 201, 240, 1); }
+
+QPushButton:pressed {
+  background-color: rgba(255, 255, 255, 0.1); /* Colour while pressed down */
+  border-color: rgba(157, 201, 240, 1); /* Selected bottom button border */
+  color: rgba(157, 201, 240, 0.87); }
+
+QGroupBox,
+#qwMacWarning,
+#qwInlineNotice {
+  background-color: rgba(255, 255, 255, 0.05); /* Bottom half "General" tab background - Elevation: 1dp */
+  border: 0px solid transparent; /* Border */
+  color: rgba(255, 255, 255, 0.87); /* Headers or titles inside boxes */
+  padding: 4px;
+  padding-top: 1em; }
+
+QGroupBox::title {
+  background-color: transparent; /* Small title background on the "General" tab */
+  margin: 6px;
+  margin-left: 8px;
+  margin-right: 8px; }
+
+QListView { /* Lists, like the "HTTP Sources" tab, and the left window in "Settings" ✔️ */
+  background-color: #121212; /* Background color for list windows tab - Elevation: 0dp */
+  border: 2px solid #2F2F2F;
+  border-radius: 8px; }
+
+QListView::item { /* Default list item, not selected ✔️ */
+  border-radius: 8px;
+  border: 0px solid transparent;
+  color: rgba(255, 255, 255, 0.60); /* The colour of unselected text */
+  selection-color: rgba(255, 255, 255, 0.87); /* The colour of selected text */
+  padding: 2px 4px; }
+
+QListView::item:hover { /* Hover ✔️ */
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 0px solid transparent; }
+
+QListView::item:selected { /* Selected but not active ✔️ */
+  background-color: rgba(157, 201, 240, 0.12);
+  border: 0px solid transparent; }
+
+QListView::item:selected:active { /* Selected and active ✔️ */
+  background-color: rgba(157, 201, 240, 0.24);
+  border: 0px solid transparent; }
+
+QTreeView {
+  margin: 0px;
+  padding: 0px;
+  background-color: #121212; /* Top torrent background - this is the main view! - Elevation: 0dp */
+  color: rgba(255, 255, 255, 0.87); /* Color of text on "Content" tab */
+  selection-background-color: rgba(255, 255, 255, 0.08); /* Color of line selection on "Content" tab - this colour gets INVERTED for dotted-border */
+  selection-color: rgba(255, 255, 255, 0.87); /* Colour of the text when selected */
+  border: 2px solid #2F2F2F;
+  qproperty-indentation: 48;
+  border-radius: 8px; }
+
+QTreeView::item {
+  margin: 0px 0px;
+  min-width: 60px;
+  min-height: 98px;
+  max-height: 98px;
+  height: 98px;
+  border: 1px solid rgba(255, 255, 255, 0.12); /* Gets doubled by previous/following items */
+  border-left: 0;
+  border-right: 0;
+  color: rgba(255, 255, 255, 0.87); /* Colour of ALL text */
+  padding: 2px 4px;
+  selection-color: rgba(255, 255, 255, 0.87); /* Colour of selected text */
+  border-radius: 0px; }
+
+QTreeView::item:first,
+QTreeView::item:only-one {
+  padding-left: 28px;
+  }
+
+QTreeView::item:last,
+QTreeView::item:only-one {
+  /* border-right: 0px solid transparent;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px; */
+  }
+
+QTreeView::item:hover,
+QTreeView::item:focus {
+  background-color: rgba(255, 255, 255, 0.04); /* Hovering over torrents, BUT NOT "Content" */
+  /* border: 0px solid transparent; /* Border while hovering over torrents */
+  }
+
+QTreeView::item:selected {
+  background-color: rgba(255, 255, 255, 0.08); }
+
+QTreeView::item:selected:first,
+QTreeView::item:selected:only-one {
+  } /* Internal border on the VERY left */
+
+QTreeView::item:selected:last,
+QTreeView::item:selected:only-one {
+  }
+
+QTreeView::item:selected:active {
+  background-color: rgba(255, 255, 255, 0.12); /* Selected torrent */
+  }
+
+QTreeView::item:selected:active:first,
+QTreeView::item:selected:active:only-one { /* Left-most border */
+  }
+
+QTreeView::item:selected:active:last,
+QTreeView::item:selected:active:only-one {
+  }
+
+QTreeView::branch { /* In "Content", the very left branch, or tree, that represents directories */
+  margin: 0px;
+  border: 0px;
+  border-radius: 0px;
+  padding: 0px;
+  border-image: none;
+  image: none;
+  color: transparent;
+  background-color: transparent;
+  min-width: 48px;
+  max-width: 48px;
+  width: 48px;
+  }
+
+QTreeView::branch:has-children:closed {
+  image: url(:/uitheme/controls/expand_more.svg); }
+
+QTreeView::branch:has-children:open {
+  image: url(:/uitheme/controls/expand_less.svg); }
+
+QCheckBox::branch:has-children:closed {
+  image: url(:/uitheme/controls/expand_more.svg); }
+
+QCheckBox::branch:has-children:open {
+  image: url(:/uitheme/controls/expand_less.svg); }
+
+QHeaderView { /* Header just above main windows (both top and bottom half) - Elevation: 4dp */
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  border-radius: 0px;
+  qproperty-defaultAlignment: AlignCenter;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: transparent; } /* The unused portion of headers */
+
+QHeaderView::section {
+  border-radius: 0px;
+  background-color: transparent; /* The USED portion of headers (contains content) */
+  color: rgba(255, 255, 255, 0.87);
+  font-weight: 500;
+  qproperty-defaultAlignment: AlignCenter;
+  padding: 0px 16px;
+  height: 105px;
+  border-right: 2px solid rgba(255, 255, 255, 0.12); }
+
+QHeaderView::down-arrow,
+QHeaderView::up-arrow {
+  margin: 0px;
+  qproperty-defaultAlignment: AlignCenter;
+  top: 1px;
+  right: 30px;
+  width: 48px; }
+
+QHeaderView::down-arrow {
+  image: url(:/uitheme/controls/arrow_downward.svg); }
+
+QHeaderView::up-arrow {
+  image: url(:/uitheme/controls/arrow_upward.svg); }
+
+QTabWidget::pane {
+  background-color: #121212; /* Outline all the way around everything - Elevation: 0dp */
+  border: 0px solid transparent; }
+
+QTabWidget::pane:top {
+  margin-top: -1px;
+  border-radius: 8px;
+  border-top-left-radius: 0; }
+
+QTabWidget::pane:right {
+  margin-right: -1px;
+  border-radius: 8px;
+  border-top-left-radius: 0; }
+
+QTabWidget::pane:left {
+  margin-left: -1px;
+  border-radius: 8px;
+  border-top-left-radius: 0; }
+
+QTabWidget::pane:bottom {
+  margin-bottom: -1px;
+  border-radius: 8px;
+  border-bottom-left-radius: 0; }
+
+QTabWidget::tab-bar {
+  background-color: #1D1D1D; }
+
+QTabBar { /* Top-left tabs: Transfer (#), RSS (#) */
+  background-color: transparent; /* Tab colour when not selected */
+  min-height: 96px;
+  max-height: 96px;
+  height: 96px;
+  text-transform: uppercase;
+  font: 28px;
+  font-weight: 500;
+  icon-size: 40px;
+  border: 0px solid transparent;
+  border-radius: 0px;
+  padding: 0px;
+  margin: 0px; }
+
+QTabBar::tab {
+  min-width: 180px;
+  min-height: 92px;
+  max-height: 92px;
+  height: 92px;
+  color: rgba(255, 255, 255, 0.60); /* Text colour when not selected */
+  background-color: transparent;
+  padding: 0px 32px;
+  margin: 0px;
+  border-radius: 0px; }
+
+QTabBar::tab:last,
+QTabBar::tab:only-one {
+  /* border-right: 1px solid #1c1c1c; */ }
+
+QTabBar::tab:hover {
+  background-color: rgba(157, 201, 240, 0.04);
+  border-bottom: 4px solid transparent; }
+
+QTabBar::tab:disabled {
+  color: #484848; }
+
+QTabBar::tab:selected {
+  color: rgba(157, 201, 240, 0.87);
+  background-color: rgba(157, 201, 240, 0.24);
+  border-bottom: 4px solid #9DC9F0; }
+/*
+QTabBar::tab:top {
+  border-bottom: 0px;
+  margin-bottom: 0px; }
+
+QTabBar::tab:right {
+  border-left: 0px;
+  margin-left: 0px; }
+
+QTabBar::tab:left {
+  border-right: 0px;
+  margin-right: 0px; }
+
+QTabBar::tab:bottom {
+  border-top: 0px;
+  margin-top: 0px; }
+
+QTabBar::tab:top:selected {
+  padding-bottom: 0px;
+  margin-bottom: 0px; }
+
+QTabBar::tab:right:selected {
+  padding-left: 7px;
+  margin-left: 0; }
+
+QTabBar::tab:left:selected {
+  padding-right: 0px;
+  margin-right: 0px; }
+
+QTabBar::tab:bottom:selected {
+  padding-top: 0px;
+  margin-top: 0px; }
+
+QTabBar::tab:top:first,
+QTabBar::tab:top:only-one {
+  border-top-left-radius: 0px; }
+
+QTabBar::tab:top:last,
+QTabBar::tab:top:only-one {
+  border-top-right-radius: 0px; }
+
+QTabBar::tab:bottom:first,
+QTabBar::tab:bottom:only-one {
+  border-bottom-left-radius: 0px; }
+
+QTabBar::tab:bottom:last,
+QTabBar::tab:bottom:only-one {
+  border-bottom-right-radius: 0px; }
+*/
+
+QScrollBar { /* Scroll bars in in side windows and views (NOT the main torrent downloading view) */
+  color: #FF0000;
+  background-color: #212121;
+  border: 0px solid transparent;
+  border-radius: 16px; }
+
+QScrollBar:vertical {
+  width: 32px;
+  /* width: 1em; */ }
+
+QScrollBar:horizontal {
+  height: 32px;
+  /* height: 1em; */ }
+
+QScrollBar::handle {
+  margin: -1px;
+  background: #333333; /* Colour of the scroll bar */
+  border: 0px solid transparent;
+  border-radius: 17px; }
+
+QScrollBar::handle:vertical {
+  border-radius: 17px; } /* Any higher breaks it completely */
+
+QScrollBar::handle:horizontal {
+  border-radius: 17px; } /* Any higher breaks it completely */
+ 
+QScrollBar::handle:hover {
+  background: #3b3b3b; } /* Scrollbar hover */
+
+QScrollBar::left-arrow,
+QScrollBar::right-arrow,
+QScrollBar::up-arrow,
+QScrollBar::down-arrow,
+QScrollBar::sub-line,
+QScrollBar::add-line,
+QScrollBar::add-page,
+QScrollBar::sub-page {
+  background: transparent;
+  height: 0px;
+  width: 0px;
+  border-radius: 0px;
+  border: 0px; }
+
+QAbstractScrollArea::corner {
+  border-left: 1px solid #1c1c1c;
+  border-top: 1px solid #1c1c1c;
+  height: 0;
+  width: 0;
+  border-radius: 8px;
+  border-top: 1px solid #1c1c1c;
+  border-left: 1px solid #1c1c1c;
+  background: #121212; } /* Elevation: 0dp */
+
+QLineEdit,
+QComboBox,
+QSpinBox,
+QAbstractSpinBox {
+  color: rgba(255, 255, 255, 0.60); /* Search box text colour */
+  padding: 4px;
+  min-height: 1em; }
+
+QComboBox,
+QSpinBox,
+QAbstractSpinBox {
+  border: 2px solid #444;
+  background-color: #444; }
+
+QLineEdit,
+QTextEdit,
+QPlainTextEdit,
+QSpinBox,
+QAbstractSpinBox,
+QComboBox:editable {
+  border: 2px solid #2F2F2F; /* Search box outline when ignored */
+  background-color: #121212; } /* Elevation: 0dp */
+
+QSpinBox,
+QAbstractSpinBox {
+  min-width: 2.5em;
+  padding-right: 10px; }
+
+QPushButton:disabled,
+QLineEdit:disabled,
+QTextEdit:disabled,
+QPlainTextEdit:disabled,
+QListWidget:disabled,
+QTreeWidget:disabled,
+QComboBox:disabled,
+QSpinBox:disabled,
+QAbstractSpinBox:disabled {
+  border: 2px solid transparent;
+  background-color: #282828; }
+
+QComboBox::drop-down,
+QAbstractSpinBox::drop-down,
+QSpinBox::drop-down,
+QDateTimeEdit::drop-down {
+  background-color: #121212; /* Elevation: 0dp */
+  border: 0;
+  margin-left: 4px;
+  margin-right: 12px;
+  margin-top: 5px; }
+
+QComboBox::down-arrow,
+QDateTimeEdit::down-arrow {
+  margin-top: -2px;
+  image: url(:/uitheme/controls/arrow_down.svg);
+  width: 14px; }
+
+QComboBox::down-arrow:disabled,
+QDateTimeEdit::down-arrow:disabled {
+  image: url(:/uitheme/controls/arrow_down_disabled.svg); }
+
+QToolButton[popupMode="1"],
+QToolButton[popupMode="2"],
+QPushButton[popupMode="1"],
+QPushButton[popupMode="2"] {
+  padding-right: 14px; }
+
+QToolButton::menu-arrow,
+QToolButton::menu-indicator,
+QPushButton::menu-arrow,
+QPushButton::menu-indicator {
+  image: url(:/uitheme/controls/arrow_down.svg);
+  subcontrol-origin: padding;
+  subcontrol-position: center right;
+  top: 2px;
+  right: 2px;
+  width: 14px; }
+
+QSpinBox::down-button,
+QAbstractSpinBox::down-button {
+  padding-right: 4px;
+  image: url(:/uitheme/controls/arrow_down.svg);
+  width: 14px;
+  padding-bottom: 1px; }
+
+QSpinBox::down-button:disabled,
+QAbstractSpinBox::down-button:disabled {
+  image: url(:/uitheme/controls/arrow_down_disabled.svg); }
+
+QSpinBox::up-button,
+QAbstractSpinBox::up-button {
+  padding-right: 4px;
+  image: url(:/uitheme/controls/arrow_up.svg);
+  width: 14px;
+  padding-top: 1px; }
+
+QSpinBox::up-button:disabled,
+QAbstractSpinBox::up-button:disabled {
+  image: url(:/uitheme/controls/arrow_up_disabled.svg); }
+
+QComboBox QAbstractItemView {
+  background-color: #121212; /* Elevation: 0dp */
+  border: 2px solid #1c1c1c;
+  color: #d8d8d8;
+  border-radius: 8px; }
+
+QLabel,
+QCheckBox,
+QAbstractCheckBox,
+QTreeView::indicator,
+QGroupBox::indicator,
+QRadioButton {
+  color: rgba(255, 255, 255, 0.87); /* Text in most of the Settings */
+  background: transparent; }
+
+QCheckBox::indicator, /* Checkbox default */
+QTreeView::indicator,
+QGroupBox::indicator {
+  padding: 0px;
+  border: 0px;
+  margin: 0px;
+  background-color: transparent; /* Overall colour for checkboxes in Settings but NOT in Content */
+  height: 48px;
+  width: 48px;
+  image: url(:/uitheme/controls/check_box_outline_blank.svg); }
+
+QMenu::indicator {
+  width: 12px;
+  left: 6px; }
+
+QCheckBox::indicator:checked, /* Checkbox checked */
+QMenu::indicator:checked,
+QTreeView::indicator:checked,
+QGroupBox::indicator:checked {
+  image: url(:/uitheme/controls/check_box.svg); }
+
+QCheckBox::indicator:disabled, /* Checkbox disabled (and unchecked) */
+QTreeView::indicator:disabled,
+QGroupBox::indicator:disabled {
+  image: url(:/uitheme/controls/check_box_outline_blank_disabled.svg); } /* Underlying colour of a checkbox in Settings if checkbox is greyed out */
+
+QCheckBox::indicator:checked:disabled, /* Checkbox disabled and checked */
+QTreeView::indicator:checked:disabled,
+QGroupBox::indicator:checked:disabled {
+  image: url(:/uitheme/controls/check_box_disabled.svg); }
+
+QRadioButton::indicator {
+  background: #444;
+  border: 2px solid #444;
+  border-radius: 8px;
+  height: 12px;
+  width: 12px; }
+
+QTreeView::indicator {
+  margin-left: -3px;
+  background: transparent; } /* Background colour of checkboxes on the "Content" tab */
+
+QRadioButton::indicator:disabled {
+  background-color: #282828;
+  padding: 0px;
+  border: 0px;
+  margin: 0px; }
+
+QRadioButton::indicator:checked {
+  image: url(:/uitheme/controls/radio_check_dark.svg); }
+
+QRadioButton::indicator:checked:disabled {
+  image: url(:/uitheme/controls/radio_check_disabled.svg); }
+
+QSlider {
+  color: transparent;
+  background-color: transparent;
+  padding: 0px;
+  border: 0px; }
+
+QSlider:horizontal {
+  height: 48px; }
+
+QSlider:vertical {
+  width: 48px; }
+
+QSlider::groove {
+  background: rgba(157, 201, 240, 0.24);
+  border: 0px solid #393939;
+  border-radius: 0px; }
+
+QSlider::groove:horizontal {
+  height: 4px; }
+
+QSlider::groove:vertical {
+  width: 4px; }
+
+QSlider::groove:disabled,
+QSlider::sub-page:disabled {
+  background: #282828;
+  border: 2px solid #ff0000;
+  border-radius: 8px; }
+
+QSlider::sub-page {
+  background: transparent;
+  border: 2px solid #9DC9F0; /* Colour of the "tail" to the left of the slider */
+  border-radius: 0px; }
+
+QSlider::handle { /* There's a slider in the "Global Download/Upload Speed Limit" popups */
+  background: #9DC9F0; /* The colour of the main draggable handle */
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  width: 24px;
+  height: 0px;
+  border: 0px solid transparent;
+  border-radius: 12px; }
+
+QSlider::handle:horizontal {
+  margin: -10px 0px; }
+
+QSlider::handle:vertical {
+  margin: -0px -10px; }
+
+QSlider::handle:focus {
+  background-color: #9DC9F0; }
+
+QSlider::handle:hover {
+  background-color: #9DC9F0; }
+
+QSlider::handle:pressed {
+  background-color: #9DC9F0; }
+
+QSlider::handle:disabled {
+  background-color: #282828; }
+
+QCheckBox::indicator:focus, /* This is all the checkbox hovering accent colours */
+QTreeView::indicator:focus,
+QRadioButton::indicator:focus,
+QGroupBox::indicator:focus,
+QComboBox:focus {
+  background-color: transparent; }
+
+QCheckBox::indicator:focus:hover,
+QTreeView::indicator:focus:hover,
+QRadioButton::indicator:focus:hover,
+QGroupBox::indicator:focus:hover,
+QComboBox:focus:hover {
+  background-color: transparent;
+  border-color: transparent; }
+
+QCheckBox::indicator:hover,
+QTreeView::indicator:hover,
+QRadioButton::indicator:hover,
+QGroupBox::indicator:hover,
+QComboBox:hover {
+  background-color: transparent; /* I turned this on to stop the box highlights in settings */
+  border-color: transparent; }
+
+QLineEdit:focus,
+QSpinBox:focus,
+QAbstractSpinBox:focus,
+QComboBox:editable:focus {
+  background-color: #121212; } /* Elevation: 0dp */
+
+QLineEdit:focus:hover,
+QSpinBox:focus:hover,
+QAbstractSpinBox:focus:hover,
+QComboBox:editable:focus:hover {
+  border-color: #485d6f; }
+
+QLineEdit:hover,
+QSpinBox:hover,
+QAbstractSpinBox:hover,
+QComboBox:editable:hover {
+  background-color: #121212; /* Elevation: 0dp */
+  border-color: #555; }
+
+QCheckBox::indicator:focus,
+QTreeView::indicator:focus,
+QRadioButton::indicator:focus,
+QGroupBox::indicator:focus,
+QComboBox:focus,
+QLineEdit:focus,
+QTextEdit:focus,
+QPlainTextEdit:focus,
+QSpinBox:focus,
+QAbstractSpinBox:focus,
+QComboBox:editable:focus {
+  border-color: #3e4f5e; }
+
+QFontDialog {
+  min-width: 32em;
+  min-height: 24em; }
+
+QColorDialog QColorLuminancePicker {
+  background-color: transparent; }
+
+QMessageBox,
+QDialogButtonBox {
+  dialogbuttonbox-buttons-have-icons: 0; }
+
+/* Mumble Specifics */
+LogTextBrowser,
+#qdsChat {
+  margin: 0 2px;
+  min-height: 120px;
+  min-width: 40px;
+  border-color: #1c1c1c; }
+
+UserView {
+  margin: 0 2px;
+  min-height: 120px;
+  min-width: 40px; }
+
+UserView::item {
+  padding: 0;
+  padding-top: -1px; }
+
+#qdwChat > QTextEdit {
+  padding: -2px;
+  margin: 0 2px;
+  margin-bottom: 2px; }
+
+.log-time {
+  background-color: transparent;
+  color: #95a5a6; }
+
+.log-server {
+  background-color: transparent;
+  color: #F9655D;
+  font-weight: bold; }
+
+.log-channel {
+  background-color: transparent;
+  color: #e67e22;
+  font-weight: bold; }
+
+.log-privilege {
+  background-color: transparent;
+  color: #c0392b;
+  font-weight: bold; }
+
+.log-target {
+  background-color: transparent;
+  color: #27ae60;
+  font-weight: bold; }
+
+.log-source {
+  background-color: transparent;
+  color: #27ae60;
+  font-weight: bold; }
+
+QListView#qlwIcons {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  min-width: 165%;
+  margin-left: 4px;
+  margin-top: 12px; }
+
+QListView#qlwIcons::item {
+  margin-bottom: 1px;
+  padding: 5px 7px; }
+
+QListView#qlwIcons::item:hover {
+  border-color: #333;
+  background-color: #333; }
+
+QListView#qlwIcons::item:selected {
+  background-color: #444;
+  border: 2px solid #444; }
+
+QListView#qlwIcons::item:focus {
+  background-color: #3e4f5e;
+  border: 2px solid #3e4f5e; }
+
+QSlider {
+  margin-left: 30px;
+  margin-right: 30px; }
+
+#qswPages > * > * > QScrollBar {
+  margin: 0; }
+
+#qswPages > * > QWidget {
+  margin: 2px; }
+
+QListView::item QListWidgetItem,
+QListView::item QLineEdit,
+QTreeView::item QComboBox,
+QTreeView::item QLineEdit {
+  background: #121212; /* When you rename a torrent and can enter text, this is the background of the text input - Elevation: 0dp */
+  color: rgba(255, 255, 255, 0.87);
+  margin: 8;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px; }
+
+QListView::item QListWidgetItem:hover,
+QListView::item QLineEdit:hover,
+QTreeView::item QComboBox:hover,
+QTreeView::item QLineEdit:hover {
+  background: rgba(255, 255, 255, 0.04); } /* When you hover over text that you can input yourself */
+
+AboutDialog > QTextBrowser,
+AboutDialog QTextEdit {
+  border: 0; }
+
+#qtbToolBar {
+  border: 2px solid transparent;
+  background: transparent; }
+
+#BanEditor {
+  min-width: 600px; }
+
+#GlobalShortcutTarget {
+  min-height: 600px; }
+
+ViewCert {
+  min-height: 600px; }
+
+TransferListWidget {
+  qproperty-downloadingStateForeground: limegreen;
+  qproperty-forcedDownloadingStateForeground: limegreen;
+  qproperty-downloadingMetadataStateForeground: limegreen;
+  qproperty-allocatingStateForeground: #cccccc;
+  qproperty-stalledDownloadingStateForeground: #cccccc;
+  qproperty-stalledUploadingStateForeground: #cccccc;
+  qproperty-uploadingStateForeground: #63b8ff;
+  qproperty-forcedUploadingStateForeground: #63b8ff;
+  qproperty-pausedDownloadingStateForeground: #fa8090;
+  qproperty-pausedUploadingStateForeground: #4f94cd;
+  qproperty-errorStateForeground: red;
+  qproperty-missingFilesStateForeground: red;
+  qproperty-queuedDownloadingStateForeground: #00cdcd;
+  qproperty-queuedUploadingStateForeground: #00cdcd;
+  qproperty-checkingDownloadingStateForeground: #00cdcd;
+  qproperty-checkingUploadingStateForeground: #00cdcd;
+  qproperty-checkingResumeDataStateForeground: #00cdcd;
+  qproperty-movingStateForeground: #00cdcd;
+  qproperty-unknownStateForeground: red; }
+  
